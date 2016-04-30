@@ -32,7 +32,6 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.triggertrap.seekarc.SeekArc;
-import com.triggertrap.seekarc.SeekArc.OnSeekArcChangeListener;
 
 /**
  * 
@@ -81,16 +80,7 @@ public class SimpleActivity extends Activity {
 		mArcWidth.setProgress(mSeekArc.getArcWidth());
 		mProgressWidth.setProgress(mSeekArc.getProgressWidth());
 		
-		mSeekArc.setOnSeekArcChangeListener(new OnSeekArcChangeListener() {
-
-			@Override
-			public void onStopTrackingTouch(SeekArc seekArc) {
-			}
-
-			@Override
-			public void onStartTrackingTouch(SeekArc seekArc) {
-			}
-
+		mSeekArc.setOnProgressChangedListener (new SeekArc.OnProgressChangedListener () {
 			@Override
 			public void onProgressChanged(SeekArc seekArc, int progress,
 										  boolean fromUser) {
